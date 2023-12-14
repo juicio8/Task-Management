@@ -25,8 +25,9 @@ Create Tasks
 Mark To Do, In Progress, Completed
 Priorities
 
-# Priority
-High - Red
-Medium - Orange
-Low - Yellow
-
+## Priority
+<ul>
+<li>High - Red</li>
+<li>Medium - Orange</li>
+<li>Low - Yellow</li>
+</ul>
