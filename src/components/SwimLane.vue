@@ -5,7 +5,6 @@ import { useTasksStore } from '@/stores/tasks'
 const store = useTasksStore()
 
 
-
 </script>
 
 <template>

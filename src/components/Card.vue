@@ -38,11 +38,13 @@ function deleteTask(id){
     store.deleteTask(id)
 }
 
-function changeLane(id, progress){
+function changeLane(e, id, progress){
+    e.stopPropagation()
     console.log(id, progress)
     store.changeProgress(id, progress)
-    showOption.value = false
     show.value = false
+    showOption.value = false
+
 }
 </script>
 
@@ -61,10 +63,9 @@ function changeLane(id, progress){
                     <div @click="showOption = true" class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white">Switch Progress</div>
                 </div>
                 <div v-if='show && showOption' class="absolute top-0 z-50 -left-20 bg-white min-w-[150px] rounded-md border border-gray-500 ">
-                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane(id, 'to do')">To Do</div>
-                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane(id, 'in progress')">In Progress</div>
-                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane(id, 'completed')">Completed</div>
-                
+                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane($event, id, 'to do')">To Do</div>
+                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane($event, id, 'in progress')">In Progress</div>
+                    <div class="py-2 px-4 text-gray-600 hover:bg-gray-500 hover:text-white" @click="changeLane($event, id, 'completed')">Completed</div>     
                 </div>
     
             </div>
